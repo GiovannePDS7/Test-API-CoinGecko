@@ -29,3 +29,43 @@ Antes de executar os testes, você precisa ter o Python instalado em sua máquin
 
 ```bash
 git clone https://github.com/GiovannePDS7/Test-API-CoinGecko.git
+```
+2. **Acesse a pasta**:
+```bash
+cd Test-API-CoinGecko
+```
+3. **Crie e ative um ambiente virtual (opcional, mas recomendado)**:
+
+*No Windows:*
+```python
+python -m venv venv
+.\venv\Scripts\activate
+```
+*No macOS/Linux::*
+```python
+python3 -m venv venv
+source venv/bin/activate
+```
+4. **Instale as dependências**:
+```python
+pip install -r requirements.txt
+```
+## Executando os Testes
+
+### Testando API
+
+*Para executar os testes, basta rodar o seguinte comando no terminal dentro do diretório do projeto:*
+```bash
+pytest test-coin-api-gecko.py
+```
+*Exibindo prints no console:*
+```bash
+pytest test-coin-api-gecko.py -s
+```
+## Como Funciona?
+
+1. **test_get_bitcoin_info:** Testa se a API do CoinGecko retorna informações sobre o Bitcoin corretamente. A função valida a presença do campo `id` e verifica se o valor é `bitcoin`.
+   
+2. **test_get_bitcoin_price:** Testa a obtenção do preço atual do Bitcoin em USD. Ele verifica se o campo `'market_data'` e o subcampo `'current_price'` com o valor de `'usd'` estão presentes.
+   
+3. **test_get_invalid_coin:** Testa a resposta da API quando você tenta acessar uma moeda inexistente. A API deve retornar um erro 404 e uma mensagem de erro indicando que a moeda não foi encontrada.
