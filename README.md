@@ -1,71 +1,71 @@
-# Testes de API - CoinGecko
+# API Tests - CoinGecko
 
-Este projeto contém uma série de testes automatizados para a API pública do CoinGecko, que fornece informações sobre criptomoedas, como o preço atual do Bitcoin, detalhes sobre o Bitcoin e a resposta de erro para moedas inválidas.
+This project contains a series of automated tests for the public CoinGecko API, which provides information about cryptocurrencies, such as the current price of Bitcoin, details about Bitcoin, and error responses for invalid coins.
 
-## Objetivo
+## Objective
 
-O objetivo deste projeto é testar as funcionalidades da API CoinGecko de forma automatizada usando o framework `pytest` e a biblioteca `requests`. Esses testes garantem que as respostas da API estejam de acordo com o esperado, como status de resposta, presença de dados e valores corretos.
+The goal of this project is to test the functionalities of the CoinGecko API automatically using the `pytest` framework and the `requests` library. These tests ensure that the API responses are as expected, such as response status, data presence, and correct values.
 
-## Funcionalidades dos Testes
+## Test Features
 
-O projeto inclui três testes principais:
+The project includes three main tests:
 
-1. **Testar informações do Bitcoin**:
-   - Verifica se a API retorna corretamente o campo `id` com o valor `'bitcoin'`.
+1. **Test Bitcoin Information**:
+   - Verifies that the API correctly returns the `id` field with the value `'bitcoin'`.
 
-2. **Testar o preço do Bitcoin**:
-   - Verifica se o preço do Bitcoin em USD está presente no campo `market_data` da resposta da API.
+2. **Test Bitcoin Price**:
+   - Verifies that the current Bitcoin price in USD is present in the `market_data` field of the API response.
 
-3. **Testar moeda inexistente**:
-   - Verifica se a API retorna um erro 404 para uma moeda inválida, como `'nonexistentcoin'`.
+3. **Test Non-existent Coin**:
+   - Verifies that the API returns a 404 error for a non-existent coin, such as `'nonexistentcoin'`.
 
-## Pré-requisitos
+## Prerequisites
 
-Antes de executar os testes, você precisa ter o Python instalado em sua máquina. O projeto utiliza as bibliotecas `requests` e `pytest`.
+Before running the tests, you need to have Python installed on your machine. The project uses the `requests` and `pytest` libraries.
 
-### Instalar as dependências
+### Install Dependencies
 
-1. **Clone o repositório para o seu computador**:
+1. **Clone the repository to your computer**:
 
 ```bash
 git clone https://github.com/GiovannePDS7/Test-API-CoinGecko.git
 ```
-2. **Acesse a pasta**:
+2. **Navigate to the project folder:**:
 ```bash
 cd Test-API-CoinGecko
 ```
-3. **Crie e ative um ambiente virtual (opcional, mas recomendado)**:
+3. **Create and activate a virtual environment (optional but recommended):**:
 
-*No Windows:*
+*On Windows:*
 ```python
 python -m venv venv
 .\venv\Scripts\activate
 ```
-*No macOS/Linux::*
+*On macOS/Linux::*
 ```python
 python3 -m venv venv
 source venv/bin/activate
 ```
-4. **Instale as dependências**:
+4. **Install the dependencies:**:
 ```python
 pip install -r requirements.txt
 ```
-## Executando os Testes
+## Running the Tests
 
-### Testando API
+### Testing the API
 
-*Para executar os testes, basta rodar o seguinte comando no terminal dentro do diretório do projeto:*
+*To run the tests, simply run the following command in the terminal within the project directory:*
 ```bash
 pytest test-coin-api-gecko.py
 ```
-*Exibindo prints no console:*
+*Displaying prints in the console:*
 ```bash
 pytest test-coin-api-gecko.py -s
 ```
-## Como Funciona?
+## How It Works?
 
-1. **test_get_bitcoin_info:** Testa se a API do CoinGecko retorna informações sobre o Bitcoin corretamente. A função valida a presença do campo `id` e verifica se o valor é `bitcoin`.
+1. **test_get_bitcoin_info:** Tests if the CoinGecko API correctly returns information about Bitcoin. The function validates the presence of the `id` field and checks if the value is `bitcoin`.
    
-2. **test_get_bitcoin_price:** Testa a obtenção do preço atual do Bitcoin em USD. Ele verifica se o campo `'market_data'` e o subcampo `'current_price'` com o valor de `'usd'` estão presentes.
+2. **test_get_bitcoin_price:** Tests retrieving the current Bitcoin price in USD. It checks if the `'market_data'` field and the subfield `'current_price'` with the value of `'usd'` are present.
    
-3. **test_get_invalid_coin:** Testa a resposta da API quando você tenta acessar uma moeda inexistente. A API deve retornar um erro 404 e uma mensagem de erro indicando que a moeda não foi encontrada.
+3. **test_get_invalid_coin:** Tests the API response when trying to access a non-existent coin. The API should return a 404 error and an error message indicating that the coin was not found.
