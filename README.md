@@ -30,23 +30,23 @@ Before running the tests, you need to have Python installed on your machine. The
 ```bash
 git clone https://github.com/GiovannePDS7/Test-API-CoinGecko.git
 ```
-2. **Navigate to the project folder:**:
+2. **Navigate to the project folder**:
 ```bash
 cd Test-API-CoinGecko
 ```
-3. **Create and activate a virtual environment (optional but recommended):**:
+3. **Create and activate a virtual environment (optional but recommended)**:
 
 *On Windows:*
 ```python
 python -m venv venv
 .\venv\Scripts\activate
 ```
-*On macOS/Linux::*
+*On macOS/Linux:*
 ```python
 python3 -m venv venv
 source venv/bin/activate
 ```
-4. **Install the dependencies:**:
+4. **Install the dependencies**:
 ```python
 pip install -r requirements.txt
 ```
